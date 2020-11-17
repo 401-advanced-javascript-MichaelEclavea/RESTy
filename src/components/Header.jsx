@@ -5,21 +5,17 @@ import './Header.scss';
 let date = new Date();
 let time = date.getHours();
 
-let day = new Date().toLocaleDateString();
-// let seconds = new Date().toLocaleTimeString();
-// console.log(seconds[6]+seconds[7]);
-
 class Header extends React.Component{
     constructor(){
         super();
         this.state = {
-            seconds: 1
+            seconds: 0
         };
     }
     
     tick(){
         this.setState(state =>({
-            seconds: state.seconds + 1 
+            seconds: state.seconds 
         }));
     }
     
@@ -27,9 +23,7 @@ class Header extends React.Component{
         this.interval = setInterval(() => this.tick(), 1000);
     }
     
-    componentWillUnmount(){
-        clearInterval(this.interval);
-    }
+
     
     render(){
 
@@ -37,7 +31,7 @@ class Header extends React.Component{
     return (
     <div id="header-container">
         <h1>Good Morning!</h1> 
-        <h2>{day} Seconds:{this.state.seconds}</h2>
+        <h2>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h2>
     </div>
     );
   }
@@ -45,7 +39,7 @@ class Header extends React.Component{
     return (
         <div id="header-container">
             <h1>Good Afternoon!</h1> 
-            <h2>{day} Seconds:{this.state.seconds}</h2>
+            <h2>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h2>
         </div>
         );
       }
@@ -54,7 +48,7 @@ class Header extends React.Component{
           return (
               <div id="header-container">
                   <h1>Good Evening!</h1> 
-                  <h2>{day} Seconds: {this.state.seconds}</h2>
+                  <h2>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h2>
               </div>
               );
             }

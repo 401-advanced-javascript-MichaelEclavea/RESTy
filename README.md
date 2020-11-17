@@ -18,4 +18,4 @@ Create index html file to look like instructions example.
 
 ## Solution
 
-[Uml:Lab_26]('./uml/uml-26.png')
+[Lab26]('./uml/uml-26.png')

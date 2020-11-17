@@ -6,24 +6,38 @@ let date = new Date();
 let time = date.getHours();
 
 let day = new Date().toLocaleDateString();
-
-let realTime = new Date().toLocaleTimeString();
+// let seconds = new Date().toLocaleTimeString();
+// console.log(seconds[6]+seconds[7]);
 
 class Header extends React.Component{
     constructor(){
         super();
         this.state = {
-           realTime: 0
+            seconds: 1
         };
     }
-
+    
+    tick(){
+        this.setState(state =>({
+            seconds: state.seconds + 1 
+        }));
+    }
+    
+    componentDidMount(){
+        this.interval = setInterval(() => this.tick(), 1000);
+    }
+    
+    componentWillUnmount(){
+        clearInterval(this.interval);
+    }
+    
     render(){
 
   if(time < 12){
     return (
     <div id="header-container">
         <h1>Good Morning!</h1> 
-        <h2>{day} {realTime}</h2>
+        <h2>{day} Seconds:{this.state.seconds}</h2>
     </div>
     );
   }
@@ -31,7 +45,7 @@ class Header extends React.Component{
     return (
         <div id="header-container">
             <h1>Good Afternoon!</h1> 
-            <h2>{day} {realTime}</h2>
+            <h2>{day} Seconds:{this.state.seconds}</h2>
         </div>
         );
       }
@@ -40,7 +54,7 @@ class Header extends React.Component{
           return (
               <div id="header-container">
                   <h1>Good Evening!</h1> 
-                  <h2>{day} {realTime}</h2>
+                  <h2>{day} Seconds: {this.state.seconds}</h2>
               </div>
               );
             }

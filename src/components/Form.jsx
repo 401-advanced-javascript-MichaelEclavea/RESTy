@@ -6,30 +6,46 @@ class Form extends React.Component {
         super(props);
         this.state = {
             url: '',
-            method: ''
+            method: '',    
+            data: {}
         };
     }
-    
 
-    handleClick = (event) => {
-        const eventMethod = event.target.value;
-        this.setState({ method: eventMethod });
-    }
+    handleForm = async (e) => {
+    e.preventDefault();
+    console.log(e.target);
+    const url = e.target.url.value;
 
-    handleSubmit = (event) =>{
-        event.preventDefault();
+    const response = await fetch(url);
+    const data = await response.json();
+    // await this.setState({ data: data });
+        this.props.results(data);
+ 
+  }
+
+
+    handleClick = (event) =>{
+        const method = event.target.value;
+        this.setState({ method: method });
+
     }
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
-            <h3>Method: {this.state.method} </h3>
-            <label>Url:</label><input type="text" />
+            <div id="form">
+            <form onSubmit={this.handleForm}>
+            <fieldset>
+            <label>Url:</label>
+            <input name="url" type="text" />
+             <button type="submit">Go</button>   
+            </fieldset>
+            </form>
             <button className="btn" onClick={this.handleClick} value="GET">GET</button>
             <button className="btn" onClick={this.handleClick} value="POST">POST</button>
             <button className="btn" onClick={this.handleClick} value="PUT">PUT</button>
             <button className="btn" onClick={this.handleClick} value="DELETE">DELETE</button>
-            </form>
+            <textarea name="textbox" rows="10" cols="70" value={`Request:${this.state.method} URL:${this.state.url}  Name:${this.state.name} Count:${this.state.count}`}></textarea>
+            </div>
         );
     }
 

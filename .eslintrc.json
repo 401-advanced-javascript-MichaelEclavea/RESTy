@@ -12,6 +12,7 @@
       "es6": true
     },
     "rules": {
+      "react/prop-types": 0,
       "eqeqeq": ["error", "always"],
       "no-console": "off",
       "no-undefined": "off",

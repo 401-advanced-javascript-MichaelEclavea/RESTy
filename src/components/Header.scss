@@ -1,10 +1,26 @@
 h1{
-    color: black;
+    color: rgb(233, 233, 233);
     vertical-align: middle;
+    font-family: sans-serif;
+    font-size: 3rem;
     
 }
 
-#header-container{
-   border-bottom: 2px solid black;
-    margin-bottom: 10px;
+header{
+  padding-top: 30px;
+  height: 100px;
+  background-color: rgb(26, 40, 75);
+  text-align: center;
+}
+
+
+
+#header-container {
+    text-align: center;
+}
+
+#header-container > h1{
+    font-size: 2em;
+    color: black;
+    
 }

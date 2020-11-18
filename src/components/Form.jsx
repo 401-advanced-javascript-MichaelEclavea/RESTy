@@ -35,16 +35,16 @@ class Form extends React.Component {
             <div id="form">
             <form onSubmit={this.handleForm}>
             <fieldset>
-            <label>Url:</label>
+            <label>Url:  {this.state.method}</label>
             <input name="url" type="text" />
-             <button type="submit">Go</button>   
+             <button id="go" type="submit">Go</button>   
             </fieldset>
             </form>
+            <div id="btn-container"></div>
             <button className="btn" onClick={this.handleClick} value="GET">GET</button>
             <button className="btn" onClick={this.handleClick} value="POST">POST</button>
             <button className="btn" onClick={this.handleClick} value="PUT">PUT</button>
             <button className="btn" onClick={this.handleClick} value="DELETE">DELETE</button>
-            <textarea name="textbox" rows="10" cols="70" value={`Request:${this.state.method} URL:${this.state.url}  Name:${this.state.name} Count:${this.state.count}`}></textarea>
             </div>
         );
     }

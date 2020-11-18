@@ -1,7 +1,9 @@
 .btn {
-    font-size: 0.9em;
+    font-size: 1.2em;
     margin-left: 10px;
-    // padding: 5px 10px 5px 10px;
+    padding: 3px 5px 3px 5px;
+    border: 0;
+    border-radius: 4px;
     font-family: 'Times New Roman', Times, serif;
 }
 
@@ -11,12 +13,17 @@
 
 #go{
     margin-left: 10px;
+    font-size: 1.1em;
+    padding: 2px 5px 2px 5px;
 }
 
 fieldset{
-    width: 350px;
+    width: 550px;
     text-align: center;
     margin: auto;
+    height: auto;
+    padding: 5px;
+    background-color: white;
     border-radius: 10px;
 }
 
@@ -24,8 +31,11 @@ label{
     font-size: 1.2em;
     padding-right: 5px;
 
-    
-    
+}
+
+input{
+    font-size: 1.2em;
+    width: 350px;
 }
 
 #btn-container{

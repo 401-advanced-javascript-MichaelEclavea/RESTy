@@ -1,4 +1,16 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 
+}
+
+h1{
+    font-size: 3rem;
+}
+body{
+    background-color: blue;
+}
 /* body{
     font-family: 'Times New Roman', Times, serif;
     margin: auto;

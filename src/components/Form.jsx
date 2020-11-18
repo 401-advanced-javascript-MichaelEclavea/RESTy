@@ -31,11 +31,14 @@ class Form extends React.Component {
     }
 
     render(){
+        const style = {
+            color: 'black'
+        };
         return (
             <div id="form">
             <form onSubmit={this.handleForm}>
             <fieldset>
-            <label>Url:  {this.state.method}</label>
+            <label style={style}>URL: {this.state.method}</label>
             <input name="url" type="text" />
              <button id="go" type="submit">Go</button>   
             </fieldset>

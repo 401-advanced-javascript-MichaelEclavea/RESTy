@@ -1,0 +1,23 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: auto;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    
+}
+
+
+header{
+    padding-top: 15px;
+    width: 100%;
+    color: rgb(230, 227, 227);
+    height: 150px;
+    background-color: rgb(50, 50, 50);
+    text-align: center;
+
+}
+header > h1 {
+    color: rgb(232, 228, 228);
+    font-size: 4em;
+}

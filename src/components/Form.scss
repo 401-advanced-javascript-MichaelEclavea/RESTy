@@ -5,18 +5,29 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-.btn-rest{
-    margin-top: 10px;
+#form{
+    text-align: center;
+}
+
+#go{
     margin-left: 10px;
-    padding: 2px 7px;
-    font-size: 1em;
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+}
+
+fieldset{
+    width: 350px;
+    text-align: center;
+    margin: auto;
+    border-radius: 10px;
 }
 
 label{
-    font-size: 1.4em;
+    font-size: 1.2em;
     padding-right: 5px;
+
     
     
+}
+
+#btn-container{
+    margin-top: 25px;
 }

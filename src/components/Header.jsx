@@ -38,6 +38,7 @@ class Header extends React.Component{
   else if(time < 18){
     return (
         <div id="header-container">
+            <h1>RESTy</h1>
             <h1>Good Afternoon!</h1> 
             <h2>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h2>
         </div>

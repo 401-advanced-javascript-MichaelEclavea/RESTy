@@ -1,5 +1,6 @@
 import React from 'react';
-
+import JSONPretty from 'react-json-pretty';
+import './Results.scss';
 
 
 class Results extends React.Component{
@@ -8,12 +9,15 @@ class Results extends React.Component{
 
     // }
     render(){
-       let data = this.props.results;
-        return (
-            <div> 
-            <p>{data.name}</p>
-            </div>
-        );
+        let data = this.props.results;
+        if(data){
+            return (
+                <div id="json-container"> 
+                <JSONPretty id="json-pretty" data={data} ></JSONPretty>
+                </div>
+            );
+
+        }
 
     }
     
@@ -21,4 +25,3 @@ class Results extends React.Component{
 
 export default Results;
 
-/* <textarea name="textbox" rows="10" cols="70" value={`Request:${this.state.method} URL:${this.state.url}}></textarea> */

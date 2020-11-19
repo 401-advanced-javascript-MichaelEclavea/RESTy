@@ -16,7 +16,7 @@ class Form extends React.Component {
     handleForm = async (e) => {
     e.preventDefault();
     if(e){
-        const method = this.state.method; 
+        
         const url = e.target.url.value;
         localStorage.setItem(`url`, JSON.stringify(e.target.url.value));
         localStorage.setItem(`method`, JSON.stringify(this.state.method));

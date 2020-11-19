@@ -4,6 +4,9 @@ import './History.scss';
 
 let array = [];
 
+
+
+
 function History(){
     var url = JSON.parse(localStorage.getItem('url'));
     var method = JSON.parse(localStorage.getItem('method'));

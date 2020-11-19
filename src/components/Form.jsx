@@ -1,6 +1,8 @@
 import React from 'react';
 import './Form.scss';
 
+
+
 class Form extends React.Component {
     constructor(props){
         super(props);
@@ -13,14 +15,16 @@ class Form extends React.Component {
 
     handleForm = async (e) => {
     e.preventDefault();
-    console.log(e.target);
-    const url = e.target.url.value;
-
-    const response = await fetch(url);
-    const data = await response.json();
-    // await this.setState({ data: data });
+    if(e){
+        const method = this.state.method; 
+        const url = e.target.url.value;
+        localStorage.setItem(`url`, JSON.stringify(e.target.url.value));
+        localStorage.setItem(`method`, JSON.stringify(this.state.method));
+        const response = await fetch(url);
+        const data = await response.json();
         this.props.results(data);
- 
+    }
+    return e;
   }
 
 
@@ -40,9 +44,10 @@ class Form extends React.Component {
             <fieldset>
             <label style={style}>URL: {this.state.method}</label>
             <input name="url" type="text" />
-             <button id="go" type="submit">Go</button>   
+            <button id="go" type="submit">Go</button>   
             </fieldset>
             </form>
+            
             <div id="btn-container"></div>
             <button className="btn" onClick={this.handleClick} value="GET">GET</button>
             <button className="btn" onClick={this.handleClick} value="POST">POST</button>

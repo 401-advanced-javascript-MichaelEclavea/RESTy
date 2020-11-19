@@ -4,6 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
 import Results from './Results';
+import History from './History';
 
 class App extends React.Component {
   constructor(props){
@@ -23,8 +24,9 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        <Form results = {this.handleResults} />
-        <Results results = {this.state.data} />
+        <Form results={this.handleResults} />
+        <History />
+        <Results results={this.state.data} />
         <Footer />
       </div>
     );

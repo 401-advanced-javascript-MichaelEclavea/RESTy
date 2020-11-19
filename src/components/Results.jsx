@@ -3,6 +3,7 @@ import JSONPretty from 'react-json-pretty';
 import './Results.scss';
 
 
+
 class Results extends React.Component{
     // constructor(props){
     //     super(props);
@@ -10,7 +11,9 @@ class Results extends React.Component{
     // }
     render(){
         let data = this.props.results;
+        
         if(data){
+
             return (
                 <div id="json-container"> 
                 <JSONPretty id="json-pretty" data={data} ></JSONPretty>
@@ -18,6 +21,7 @@ class Results extends React.Component{
             );
 
         }
+       
 
     }
     

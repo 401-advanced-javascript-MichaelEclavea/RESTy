@@ -1,5 +1,9 @@
 import React from 'react';
+import {
 
+
+  Link
+} from "react-router-dom";
 import './Header.scss';
 
 let date = new Date();
@@ -37,10 +41,31 @@ class Header extends React.Component{
   }
   else if(time < 18){
     return (
+        <div>
         <div id="header-container">
-            <h1>RESTy</h1>
+         <nav>
+          <ul>
+            <li>
+            <Link to="/">Home</Link>
+            </li>
+            <li>
+                <Link to="/form">Search-API</Link>
+            </li>
+            <li>
+              <Link to="/about">About</Link>
+            </li>
+            <li>
+              <Link to="/help">Help</Link>
+            </li>
+            <li>
+              <Link to="/history">History</Link>
+            </li>
+          </ul>
+        </nav>
+        
             <h1>Good Afternoon!</h1> 
             <h2>{new Date().toLocaleDateString()} {new Date().toLocaleTimeString()}</h2>
+        </div>
         </div>
         );
       }

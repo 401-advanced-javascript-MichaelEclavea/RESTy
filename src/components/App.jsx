@@ -1,10 +1,17 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 import './App.scss';
 import Header from './Header';
 import Footer from './Footer';
 import Form from './Form';
 import Results from './Results';
 import History from './History';
+import About from './About';
+import Help from './Help';
 
 class App extends React.Component {
   constructor(props){
@@ -22,13 +29,24 @@ class App extends React.Component {
 
   render(){
     return (
+      <Router>
       <div>
+        <Route path="/">
         <Header />
-        <Form results={this.handleResults} />
-        <History />
-        <Results results={this.state.data} />
-        <Footer />
+        </Route>
+        
+        <Switch>
+       
+       
+        <Route path="/form" exact>  <Form results={this.handleResults} /><Results results={this.state.data} />
+        </Route>
+        <Route path="/about" exact component={About} />
+        <Route path="/help" exact component={Help} />
+        <Route path="/history" exact><History /></Route>
+        </Switch>
+        <Footer/>
       </div>
+      </Router>
     );
   }
 }

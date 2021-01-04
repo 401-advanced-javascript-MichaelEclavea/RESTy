@@ -4,7 +4,7 @@ function Fortune(){
 
  return(
      <>
-     <p>fortune: {fortune[1]}</p>
+     <h2 style={{textAlign: 'center', marginTop: '10px'}}>Fortune: {fortune[1]}</h2>
      </>
  );
 

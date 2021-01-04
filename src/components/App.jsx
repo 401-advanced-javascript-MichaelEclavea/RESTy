@@ -33,9 +33,9 @@ class App extends React.Component {
       <Router>
       <div>
         {/* <Route path="/"/> */}
-        <Fortune/>
         <Header />
         <Form results={this.handleResults} />
+        <Fortune/>
         <Results results={this.state.data} />
       
         <Switch>

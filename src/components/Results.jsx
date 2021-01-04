@@ -3,24 +3,23 @@ import JSONPretty from 'react-json-pretty';
 import './Results.scss';
 
 
-
 class Results extends React.Component{
-    // constructor(props){
-    //     super(props);
-
-    // }
+    constructor(props){
+        super(props);
+        
+    }
+    
     render(){
         let data = this.props.results;
-        
-        if(data){
+        console.log(data);
 
             return (
-                <div id="json-container"> 
-                <JSONPretty id="json-pretty" data={data} ></JSONPretty>
+                <div id='json-container'> 
+                <JSONPretty id="json-pretty" data={data}></JSONPretty>
                 </div>
             );
 
-        }
+ 
        
 
     }

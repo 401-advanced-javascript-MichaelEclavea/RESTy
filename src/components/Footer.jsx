@@ -5,7 +5,7 @@ import './Footer.scss';
 function Footer() {
   return (
     <footer>
-      <h3>	&#169; 2018 Code Fellows</h3>
+      <h3 style={{ textAlign: 'center'}}>	&#169; RESTy API</h3>
     </footer>
   );
 }

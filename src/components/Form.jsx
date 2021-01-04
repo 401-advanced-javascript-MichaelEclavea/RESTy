@@ -24,7 +24,9 @@ class Form extends React.Component {
         const data = await response.json();
         this.props.results(data);
     }
-    return e;
+    else{
+        console.log(e);
+    }
   }
 
 
@@ -50,9 +52,9 @@ class Form extends React.Component {
             
             <div id="btn-container"></div>
             <button className="btn" onClick={this.handleClick} value="GET">GET</button>
-            <button className="btn" onClick={this.handleClick} value="POST">POST</button>
-            <button className="btn" onClick={this.handleClick} value="PUT">PUT</button>
-            <button className="btn" onClick={this.handleClick} value="DELETE">DELETE</button>
+            <button className="btn" onClick={this.handleClick} value="POST" disabled='true'>POST</button>
+            <button className="btn" onClick={this.handleClick} value="PUT" disabled='true'>PUT</button>
+            <button className="btn" onClick={this.handleClick} value="DELETE" disabled='true'>DELETE</button>
             </div>
         );
     }

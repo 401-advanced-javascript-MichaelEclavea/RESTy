@@ -12,37 +12,36 @@ import Results from './Results';
 import History from './History';
 import About from './About';
 import Help from './Help';
+import Fortune from './Fortune';
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      data: {}
+      data: null
     }; 
     this.handleResults = this.handleResults.bind(this);
   }
 
   handleResults(data){
-    this.setState({ data: data });
-    console.log(this.state.data);
+    this.setState({data});
+    console.log('original data!!', this.state.data);
   }
 
   render(){
     return (
       <Router>
       <div>
-        <Route path="/">
+        {/* <Route path="/"/> */}
+        <Fortune/>
         <Header />
-        </Route>
-        
+        <Form results={this.handleResults} />
+        <Results results={this.state.data} />
+      
         <Switch>
-       
-       
-        <Route path="/form" exact>  <Form results={this.handleResults} /><Results results={this.state.data} />
-        </Route>
         <Route path="/about" exact component={About} />
         <Route path="/help" exact component={Help} />
-        <Route path="/history" exact><History /></Route>
+        <Route path="/history" exact component={History}/>
         </Switch>
         <Footer/>
       </div>

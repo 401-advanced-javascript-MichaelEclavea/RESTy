@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
+
   Route
 } from "react-router-dom";
 import './App.scss';
@@ -12,7 +12,7 @@ import Results from './Results';
 import History from './History';
 import About from './About';
 import Help from './Help';
-import Fortune from './Fortune';
+
 
 class App extends React.Component {
   constructor(props){
@@ -25,6 +25,7 @@ class App extends React.Component {
 
   handleResults(data){
     this.setState({data});
+
     console.log('original data!!', this.state.data);
   }
 
@@ -32,17 +33,16 @@ class App extends React.Component {
     return (
       <Router>
       <div>
-        {/* <Route path="/"/> */}
         <Header />
+        <Route exact path="/">
+
         <Form results={this.handleResults} />
-        <Fortune/>
-        <Results results={this.state.data} />
-      
-        <Switch>
+        <Results results={this.state.data}/>
+        </Route>
+       
         <Route path="/about" exact component={About} />
         <Route path="/help" exact component={Help} />
-        <Route path="/history" exact component={History}/>
-        </Switch>
+        <Route path="/history" results={this.state.data} exact component={History}/>
         <Footer/>
       </div>
       </Router>

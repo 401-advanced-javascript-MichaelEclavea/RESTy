@@ -11,7 +11,7 @@ class Results extends React.Component{
     
     render(){
         let data = this.props.results;
-        console.log(data);
+        console.log('this is results data', data);
 
             return (
                 <div id='json-container'> 

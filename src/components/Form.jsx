@@ -18,13 +18,13 @@ class Form extends React.Component {
     if(e){
         
         const url = e.target.url.value;
-        localStorage.setItem(`url`, JSON.stringify(e.target.url.value));
-        localStorage.setItem(`method`, JSON.stringify(this.state.method));
+        localStorage.setItem('url', JSON.stringify(e.target.url.value));
+        localStorage.setItem('method', JSON.stringify(this.state.method));
         const response = await fetch(url);
         const data = await response.json();
         this.props.results(data);
     }
-    else{
+    else {
         console.log(e);
     }
   }
@@ -41,20 +41,20 @@ class Form extends React.Component {
             color: 'black'
         };
         return (
-            <div id="form">
+            <div id='form'>
             <form onSubmit={this.handleForm}>
             <fieldset>
             <label style={style}>URL: {this.state.method}</label>
-            <input name="url" type="text" />
-            <button id="go" type="submit">Go</button>   
+            <input name='url' type='text' />
+            <button id='go' type='submit'>Go</button>   
             </fieldset>
             </form>
             
             <div id="btn-container"></div>
-            <button className="btn" onClick={this.handleClick} value="GET">GET</button>
-            <button className="btn" onClick={this.handleClick} value="POST" disabled='true'>POST</button>
-            <button className="btn" onClick={this.handleClick} value="PUT" disabled='true'>PUT</button>
-            <button className="btn" onClick={this.handleClick} value="DELETE" disabled='true'>DELETE</button>
+            <button className='btn' onClick={this.handleClick} value='GET'>GET</button>
+            <button className='btn' onClick={this.handleClick} value='POST' disabled={true}>POST</button>
+            <button className='btn' onClick={this.handleClick} value='PUT' disabled={true}>PUT</button>
+            <button className='btn' onClick={this.handleClick} value='DELETE' disabled={true}>DELETE</button>
             </div>
         );
     }

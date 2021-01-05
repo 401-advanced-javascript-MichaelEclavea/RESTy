@@ -34,7 +34,7 @@ class App extends React.Component {
       <Router>
       <div>
         <Header />
-        <Route exact path="/">
+        <Route exact path="/RESTy">
 
         <Form results={this.handleResults} />
         <Results results={this.state.data}/>

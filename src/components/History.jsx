@@ -3,41 +3,41 @@ import './History.scss';
 
 
 let array = [];
-let count = 0; 
+ 
 
 
 
 function History(){
   const [history, setHistory] = useState([]);
     var url = JSON.parse(localStorage.getItem('url'));
-    // var method = JSON.parse(localStorage.getItem('method'));
-    let save = `${url}`;
-    console.log('history', url);
-    array.push(save);
-    console.log('array', array);
+    // var method = JSON.parse(localStorage.getItem('method')); 
+  
+    function historyList (){
+    array.push(url);
 
-    useEffect(() =>{
-      setHistory(save);
-      array.push(history);
-    }, [history]);
+    setHistory(array);
+  }
 
+  useEffect(() =>{
+   historyList();
+  }, [useEffect]);
 
     function clearHistory(){
+      localStorage.clear();
       setHistory([]);
       array = [];
       console.log('cleared array', array);
     }
  return (
-   <div>
+   <div style={{textAlign: 'center', margin: 'auto'}}>
 
     <button onClick={clearHistory}>Clear History</button>
      <div id="savedSearch">
      <h5>Search Results History</h5>
+     
      <ul>
-      {array.map((value) => {
-      
-        return <li key={count}>{count}. {value}</li>;
-
+      {history.map((value, idx) => {
+        return <li key={idx}>{idx + 1}. {value}</li>;
         }
       )}
      </ul>

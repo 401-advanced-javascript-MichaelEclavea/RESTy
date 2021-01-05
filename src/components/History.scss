@@ -1,7 +1,8 @@
 #savedSearch{
     width: 350px;
     min-height: 200px;
-    height: auto;
+    height: 25vh;
+    overflow: auto;
     background-color: rgba(247, 247, 247, 0.981);
     border: 1px solid black;
     margin: auto;
@@ -23,6 +24,8 @@ li{
     width: fit-content;
     margin: auto;
     text-align: center;
+    display: block;
+    height: 1vh;
 }
 
 ul li::marker {
